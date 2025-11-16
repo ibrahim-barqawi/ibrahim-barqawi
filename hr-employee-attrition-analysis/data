@@ -1,0 +1,21 @@
+hr-employee-attrition-analysis/
+│
+├─ data/
+│   └─ README.md          # explain where to download the dataset
+│
+├─ notebooks/
+│   └─ 01_hr_attrition_analysis.ipynb
+│
+├─ src/
+│   └─ hr_attrition_analysis.py   # your cleaned script
+│
+├─ reports/
+│   └─ hr_attrition_summary.pdf   # optional: summary or slides
+│
+├─ images/
+│   ├─ attrition_by_overtime.png
+│   ├─ attrition_by_jobrole.png
+│   └─ correlation_attrition.png
+│
+├─ requirements.txt
+└─ README.md
