@@ -27,7 +27,7 @@ import sys
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
-from statistics import mean, quantiles, stdev
+from statistics import mean, median, quantiles, stdev
 from typing import Dict, Iterable, List, Sequence
 
 DEFAULT_DATA_PATH = Path("data/sample_housing.tsv")
@@ -120,13 +120,12 @@ def price_by_category(rows: Sequence[Dict[str, object]], column: str) -> List[Di
     summary: List[Dict[str, float]] = []
     for key, prices in groups.items():
         ordered = sorted(prices)
-        q1, q2, q3 = quantiles(ordered, n=4, method="inclusive")
         summary.append(
             {
                 column: key,
                 "count": len(prices),
                 "mean": mean(prices),
-                "median": q2,
+                "median": median(prices),
                 "min": ordered[0],
                 "max": ordered[-1],
             }
